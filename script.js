@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
 
         setTimeout(() => {
             welcomeScreen.style.display = "none";
-        }, 3000);
+        }, 5000);
 
     } else {
         // 🔁 REDIRECT / RELOAD → LOADING
@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
 
         setTimeout(() => {
             loadingScreen.style.display = "none";
-        }, 1500);
+        }, 2000);
     }
 });
 
