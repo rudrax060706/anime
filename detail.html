@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anime Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+<style>
+body {
+    background: #0b0b0f;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* HERO */
+.hero {
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #0b0b0f 20%, rgba(0,0,0,0.4));
+}
+
+/* DETAILS */
+.detail-wrapper {
+    margin-top: -180px;
+    position: relative;
+    z-index: 2;
+}
+
+.poster {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.anime-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.badge-box span {
+    background: #1c1c28;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* GENRES */
+.genre span {
+    background: #222;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-right: 8px;
+    font-size: 13px;
+}
+
+/* PLAYER */
+.player {
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+/* EPISODES */
+.episode-list {
+    background: #111;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* ALWAYS 10 BUTTONS PER ROW */
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+}
+
+.episode-btn {
+    background: #1c1c28;
+    border-radius: 6px;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+}
+
+.episode-btn:hover {
+    background: #ff005c;
+}
+
+.episode-btn.active {
+    background: linear-gradient(45deg, #ff005c, #ff7b00);
+    font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-4">
+    <a class="navbar-brand text-danger fw-bold" href="index.html">← Back</a>
+</nav>
+
+<div id="hero" class="hero"></div>
+
+<div class="container detail-wrapper">
+
+    <!-- INFO -->
+    <div class="row g-4">
+        <div class="col-md-4 col-lg-3">
+            <img id="anime-img" class="poster">
+        </div>
+
+        <div class="col-md-8 col-lg-9">
+            <h1 id="anime-name" class="anime-title"></h1>
+
+            <div class="badge-box my-3">
+                ⭐ <span id="anime-rating"></span>
+                🎬 <span id="anime-episodes"></span> Episodes
+                ✍️ <span id="anime-creator"></span>
+            </div>
+
+            <div id="anime-genres" class="genre mt-3"></div>
+        </div>
+    </div>
+
+<!-- PLAYER (HIDDEN INITIALLY) -->
+<div class="player mt-5" id="playerBox" style="display:none;">
+    <iframe id="videoPlayer"
+        width="100%"
+        height="420"
+        src=""
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+    <!-- EPISODES -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="episode-list">
+                <h5 class="mb-3">Episodes</h5>
+                <div id="episodeContainer" class="episode-grid"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 
