@@ -9,7 +9,7 @@ const welcomeAnim = lottie.loadAnimation({
     renderer: "svg",
     loop: false,
     autoplay: false,
-    path: "Welcome.json"
+    path: "welcome.json"
 });
 
 // Loading animation
